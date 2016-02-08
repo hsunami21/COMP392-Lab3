@@ -63,8 +63,8 @@ function init() {
     
     //Add a Plane to the Scene
     plane = new gameObject(
-        new PlaneGeometry(16, 16, 1, 1),
-        new LambertMaterial({ color: 0xe79b61 }),
+        new PlaneGeometry(20, 20, 1, 1),
+        new LambertMaterial({ color: 0xff00ff }),
         0, 0, 0);
 
     plane.rotation.x = -0.5 * Math.PI;
@@ -73,7 +73,7 @@ function init() {
     console.log("Added Plane Primitive to scene...");
     
     //Add a Cube to the Scene
-    cubeMaterial = new LambertMaterial({color:0x00ff00});
+    cubeMaterial = new LambertMaterial({color:0xff9900});
     cubeGeometry = new CubeGeometry(2, 2, 2);
     cube = new Mesh(cubeGeometry, cubeMaterial);
     cube.castShadow = true;
@@ -160,9 +160,9 @@ function setupRenderer(): void {
 function setupCamera(): void {
     camera = new PerspectiveCamera(45, config.Screen.RATIO, 0.1, 1000);
     //camera = new PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.x = 0.6;
-    camera.position.y = 16;
-    camera.position.z = -20.5;
+    camera.position.x = -15;
+    camera.position.y = 15;
+    camera.position.z = 15;
     camera.lookAt(new Vector3(0, 0, 0));
     console.log("Finished setting up Camera...");
 }
